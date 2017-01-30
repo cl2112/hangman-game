@@ -1,5 +1,5 @@
 var userGuess
-var charaChoices = ["AKUMA","RYU","CHUN-LI","CAMMY","M. BISON","KEN","VEGA","SAGAT","GUILE","BALROG","ZANGIEF","BLANKA","DHALSIM",
+var charaChoices = ["AKUMA","RYU","CHUN LI","CAMMY","M. BISON","KEN","VEGA","SAGAT","GUILE","BALROG","ZANGIEF","BLANKA","DHALSIM",
 					"FEI LONG","E. HONDA","T. HAWK","DEE JAY"]
 var moveChoices = ["SHORYUKEN","HADOUKEN","SONIC BOOM","FLASH KICK","KIKOHKEN","HUNDRED HAND SLAP","SUMO HEADBUTT","RAGING DEMON",
 					"SPINNING PILE DRIVER","TIGER SHOT","TIGER UPPERCUT","RUSH PUNCH","YOGA FLAME","CANNON SPIKE"]
@@ -11,6 +11,7 @@ var guessLine = " _ "
 var linesTotal 
 var correctLetter
 var blankArray = []
+var wordCompleted
 
 /*
 document.onkeyup = function(event) {
@@ -68,6 +69,7 @@ document.onkeyup = function(event) {
 		console.log(userGuess);
 		compareUserInput();
 		displayAlreadyGuessed();
+		wordCompleteCheck();
 	} else{
 		console.log("key not supported");
 	}
@@ -127,7 +129,16 @@ function checkForSpaces() {
 		}
 	}
 }
-
+function wordCompleteCheck() {
+	//check if there are any blank spaces left in the blankArray, if yes then do nothing, if no then word is complete.
+		if (blankArray.indexOf(" _ ") == -1) {
+			wordComplete = true;
+			console.log("word is done");
+			document.getElementById("congrats").innerHTML = "Congrats!!!"
+		} else {
+			wordComplete = false;
+		}
+}
 
 
 
