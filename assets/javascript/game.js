@@ -14,6 +14,7 @@ document.onkeyup = function(event) {
 	console.log(userGuess);
 	if (userInputs.indexOf(userGuess) === -1) {
 		userInputs.push(userGuess);
+		document.getElementById("alreadyGuessed").innerHTML = userInputs;
 	} else {
 		console.log("duplicate")
 	}
