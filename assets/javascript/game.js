@@ -5,6 +5,7 @@ var moveChoices = ["SHORYUKEN","HADOUKEN","SONIC BOOM","FLASH KICK","KIKOHKEN","
 					"SPINNING PILE DRIVER","TIGER SHOT","TIGER UPPERCUT","RUSH PUNCH","YOGA FLAME","CANNON SPIKE"]
 var totalChoices = [charaChoices, moveChoices]
 var userInputs = []
+var possibleUserInputs = ["q","w","e","r","t","y","u","i","o","p","a","s","d","f","g","h","j","k,","l","z","x","c","v","b","n","m"]
 var wordChosen
 var guessLine = " _ "
 var linesTotal 
@@ -62,10 +63,14 @@ function checkUserInput(x, y) {
 }
 */
 document.onkeyup = function(event) {
-	userGuess = event.key;
-	console.log(userGuess);
-	compareUserInput();
-	displayAlreadyGuessed();
+	if (possibleUserInputs.indexOf(event.key) != -1){
+		userGuess = event.key;
+		console.log(userGuess);
+		compareUserInput();
+		displayAlreadyGuessed();
+	} else{
+		console.log("key not supported");
+	}
 }
 function chooseWord() {
 	var chosenArray = totalChoices[Math.floor(Math.random() * totalChoices.length)];
