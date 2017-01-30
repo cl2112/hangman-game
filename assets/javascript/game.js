@@ -13,6 +13,7 @@ var correctLetter
 var blankArray = []
 var wordCompleted
 var guessesLeft
+var allWordsChosen = []
 
 /*
 document.onkeyup = function(event) {
@@ -77,8 +78,14 @@ document.onkeyup = function(event) {
 }
 function chooseWord() {
 	var chosenArray = totalChoices[Math.floor(Math.random() * totalChoices.length)];
-	wordChosen = chosenArray[Math.floor(Math.random() * chosenArray.length)];
-	console.log(wordChosen);
+	var tempWord = chosenArray[Math.floor(Math.random() * chosenArray.length)];
+	console.log(tempWord);
+	if (allWordsChosen.indexOf(tempWord) == -1) {
+		wordChosen = tempWord;
+		allWordsChosen.push(wordChosen);
+		console.log(tempWord);
+		console.log(wordChosen);
+	}
 }
 function blankGenerator() {
 	for (var i = 0; i < wordChosen.length; i++) {
