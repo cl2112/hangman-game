@@ -143,7 +143,9 @@ function wordCompleteCheck() {
 		}
 }
 function decreaseGuessesLeft() {
-	guessesLeft -= 1;
+	if (wordChosen.indexOf(userGuess.toUpperCase()) == -1) {
+		guessesLeft -= 1;
+	}
 }
 function resetGuessesLeft() {
 	guessesLeft = 10;
