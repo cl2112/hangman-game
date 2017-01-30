@@ -8,8 +8,10 @@ var userInputs = []
 var wordChosen
 var guessLine = " _ "
 var linesTotal 
+var correctLetter
+var blankArray = []
 
-
+/*
 document.onkeyup = function(event) {
 	userGuess = event.key;
 	console.log(userGuess);
@@ -17,9 +19,11 @@ document.onkeyup = function(event) {
 		userInputs.push(userGuess);
 		document.getElementById("alreadyGuessed").innerHTML = userInputs;
 	} else {
-		console.log("duplicate")
+		console.log("duplicate");
 	}
-	
+	if (checkUserInput(userGuess, wordChosen) === -1) {
+		console.log("no match");
+	}	
 }
 function chooseWord() {
 	var chosenArray = totalChoices[Math.floor(Math.random() * totalChoices.length)];
@@ -45,4 +49,33 @@ function blankGenerator() {
 	console.log(fullNumberOfLines);
 	console.log(linesTotal);
 	document.getElementById("guessWord").innerHTML = linesTotal;
+}
+function checkUserInput(x, y) {
+	for (var i = 0; i < y.length; i++) {
+		if (x.toUpperCase() === y.charAt(i)) {
+			correctLetter = y.charAt(i);
+			console.log(x);
+			console.log(correctLetter);
+
+		}
+	}
+}
+*/
+document.onkeyup = function(event) {
+	userGuess = event.key;
+	console.log(userGuess);
+}
+function chooseWord() {
+	var chosenArray = totalChoices[Math.floor(Math.random() * totalChoices.length)];
+	wordChosen = chosenArray[Math.floor(Math.random() * chosenArray.length)];
+	console.log(wordChosen);
+}
+function blankGenerator() {
+	for (var i = 0; i < wordChosen.length; i++) {
+		blankArray.push(guessLine);
+		console.log(blankArray);
+	}
+}
+function displayBlankLines(x) {
+	document.getElementById(x).innerHTML = blankArray.join("");
 }
