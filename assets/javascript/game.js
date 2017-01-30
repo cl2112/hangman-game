@@ -107,7 +107,9 @@ function compareUserInput() {
 function displayAlreadyGuessed() {
 	if (userInputs.indexOf(userGuess.toUpperCase()) === -1){
 		userInputs.push(userGuess.toUpperCase());
+		decreaseGuessesLeft();
 		document.getElementById("alreadyGuessed").innerHTML = userInputs;
+		document.getElementById("congrats").innerHTML = guessesLeft;
 	} else {
 		console.log("duplicate");
 	}
