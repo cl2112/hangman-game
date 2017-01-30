@@ -12,6 +12,7 @@ var linesTotal
 var correctLetter
 var blankArray = []
 var wordCompleted
+var guessesLeft
 
 /*
 document.onkeyup = function(event) {
@@ -139,8 +140,12 @@ function wordCompleteCheck() {
 			wordComplete = false;
 		}
 }
-
-
+function decreaseGuessesLeft() {
+	guessesLeft -= 1;
+}
+function resetGuessesLeft() {
+	guessesLeft = 10;
+}
 
 
 
