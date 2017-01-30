@@ -77,6 +77,9 @@ function blankGenerator() {
 		console.log(blankArray);
 	}
 }
+function resetBlankArray() {
+	blankArray = [];
+}
 function displayBlankLines(x) {
 	document.getElementById(x).innerHTML = blankArray.join("");
 }
