@@ -37,7 +37,12 @@ function displayGuessLines() {
 	document.getElementById("guessWord").innerHTML = guessLine * x;
 }
 function blankGenerator() {
-	for (var i = 0; i <= wordChosen.length; i++) {
-		linesTotal += guessLine;
+	var fullNumberOfLines = guessLine;
+	for (var i = 0; i < wordChosen.length -1; i++) {
+		fullNumberOfLines += guessLine;
 	}
+	linesTotal = fullNumberOfLines;
+	console.log(fullNumberOfLines);
+	console.log(linesTotal);
+	document.getElementById("guessWord").innerHTML = linesTotal;
 }
