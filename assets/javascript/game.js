@@ -85,6 +85,9 @@ function chooseWord() {
 		allWordsChosen.push(wordChosen);
 		console.log(tempWord);
 		console.log(wordChosen);
+	} else {
+		console.log("word repeated");
+		chooseWord();
 	}
 }
 function blankGenerator() {
