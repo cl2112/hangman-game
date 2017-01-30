@@ -109,7 +109,7 @@ function displayAlreadyGuessed() {
 		userInputs.push(userGuess.toUpperCase());
 		decreaseGuessesLeft();
 		document.getElementById("alreadyGuessed").innerHTML = userInputs;
-		document.getElementById("congrats").innerHTML = guessesLeft;
+		gameOverCheck();
 	} else {
 		console.log("duplicate");
 	}
@@ -147,7 +147,14 @@ function decreaseGuessesLeft() {
 }
 function resetGuessesLeft() {
 	guessesLeft = 10;
+	document.getElementById("congrats").innerHTML = guessesLeft;
 }
-
+function gameOverCheck() {
+	if (guessesLeft == 0) {
+		document.getElementById("congrats").innerHTML = "game over man";
+	} else {
+		document.getElementById("congrats").innerHTML = guessesLeft;
+	}
+}
 
 
