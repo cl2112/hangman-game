@@ -5,7 +5,7 @@ var moveChoices = ["SHORYUKEN","HADOUKEN","SONIC BOOM","FLASH KICK","KIKOHKEN","
 					"SPINNING PILE DRIVER","TIGER SHOT","TIGER UPPERCUT","RUSH PUNCH","YOGA FLAME","CANNON SPIKE"]
 var totalChoices = [charaChoices, moveChoices]
 var userInputs = []
-var possibleUserInputs = ["q","w","e","r","t","y","u","i","o","p","a","s","d","f","g","h","j","k,","l","z","x","c","v","b","n","m"]
+var possibleUserInputs = ["q","w","e","r","t","y","u","i","o","p","a","s","d","f","g","h","j","k","l","z","x","c","v","b","n","m"]
 var wordChosen
 var guessLine = " _ "
 var linesTotal 
