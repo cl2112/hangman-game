@@ -6,7 +6,8 @@ var moveChoices = ["SHORYUKEN","HADOUKEN","SONIC BOOM","FLASH KICK","KIKOHKEN","
 var totalChoices = [charaChoices, moveChoices]
 var userInputs = []
 var wordChosen
-
+var guessLine = " _ "
+var linesTotal 
 
 
 document.onkeyup = function(event) {
@@ -30,4 +31,13 @@ function arrayString() {
 }
 function userInputCheck() {
 
+}
+function displayGuessLines() {
+	var x = wordChosen.length;
+	document.getElementById("guessWord").innerHTML = guessLine * x;
+}
+function blankGenerator() {
+	for (var i = 0; i <= wordChosen.length; i++) {
+		linesTotal += guessLine;
+	}
 }
