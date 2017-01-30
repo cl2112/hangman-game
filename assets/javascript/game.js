@@ -115,6 +115,18 @@ function resetUserInputsArray() {
 		document.getElementById("alreadyGuessed").innerHTML = userInputs;
 	}
 }
+function checkForSpaces() {
+	//if the charaAt(i) is the same as "space" in the wordChosen then output that index and use it to place a "space"
+	// in the blankArray.
+	for (var i = 0; i < wordChosen.length; i++) {
+		if (wordChosen.charAt(i) == " ") {
+			spliceIntoBlankArray(i, "&nbsp&nbsp&nbsp"); 
+		}
+		if (wordChosen.charAt(i) == ".") {
+			spliceIntoBlankArray(i, ".");
+		}
+	}
+}
 
 
 
