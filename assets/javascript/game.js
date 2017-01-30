@@ -64,6 +64,7 @@ function checkUserInput(x, y) {
 document.onkeyup = function(event) {
 	userGuess = event.key;
 	console.log(userGuess);
+	compareUserInput();
 }
 function chooseWord() {
 	var chosenArray = totalChoices[Math.floor(Math.random() * totalChoices.length)];
@@ -78,4 +79,16 @@ function blankGenerator() {
 }
 function displayBlankLines(x) {
 	document.getElementById(x).innerHTML = blankArray.join("");
+}
+function spliceIntoBlankArray (x, y) {
+	blankArray.splice(x, 1, y)
+}
+function compareUserInput() {
+	for (var i = 0; i < wordChosen.length; i++) {
+		var letterToBeCompared = wordChosen.charAt(i);
+		if (userGuess.toUpperCase() == letterToBeCompared) {
+			spliceIntoBlankArray(i, letterToBeCompared);
+			displayBlankLines("guessWord");
+		} 
+	}
 }
