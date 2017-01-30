@@ -65,6 +65,7 @@ document.onkeyup = function(event) {
 	userGuess = event.key;
 	console.log(userGuess);
 	compareUserInput();
+	displayAlreadyGuessed();
 }
 function chooseWord() {
 	var chosenArray = totalChoices[Math.floor(Math.random() * totalChoices.length)];
@@ -95,3 +96,23 @@ function compareUserInput() {
 		} 
 	}
 }
+function displayAlreadyGuessed() {
+	if (userInputs.indexOf(userGuess.toUpperCase()) === -1){
+		userInputs.push(userGuess.toUpperCase());
+		document.getElementById("alreadyGuessed").innerHTML = userInputs;
+	} else {
+		console.log("duplicate");
+	}
+}
+function resetUserInputsArray() {
+	if (userInputs.length != 0) {
+		userInputs = [];
+		document.getElementById("alreadyGuessed").innerHTML = userInputs;
+	}
+}
+
+
+
+
+
+
