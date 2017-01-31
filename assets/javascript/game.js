@@ -7,7 +7,7 @@ var totalChoices = [charaChoices, moveChoices]
 var userInputs = []
 var possibleUserInputs = ["q","w","e","r","t","y","u","i","o","p","a","s","d","f","g","h","j","k","l","z","x","c","v","b","n","m"]
 var wordChosen
-var guessLine = " _ "
+var guessLine = "_"
 var linesTotal 
 var correctLetter
 var blankArray = []
@@ -136,7 +136,7 @@ function checkForSpaces() {
 	// in the blankArray.
 	for (var i = 0; i < wordChosen.length; i++) {
 		if (wordChosen.charAt(i) == " ") {
-			spliceIntoBlankArray(i, "&nbsp&nbsp&nbsp"); 
+			spliceIntoBlankArray(i, "&nbsp"); 
 		}
 		if (wordChosen.charAt(i) == ".") {
 			spliceIntoBlankArray(i, ".");
@@ -145,7 +145,7 @@ function checkForSpaces() {
 }
 function wordCompleteCheck() {
 	//check if there are any blank spaces left in the blankArray, if yes then do nothing, if no then word is complete.
-		if (blankArray.indexOf(" _ ") == -1) {
+		if (blankArray.indexOf("_") == -1) {
 			wordComplete = true;
 			console.log("word is done");
 			document.getElementById("congrats").innerHTML = "Congrats!!!"
