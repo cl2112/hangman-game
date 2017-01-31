@@ -121,7 +121,6 @@ function displayAlreadyGuessed() {
 		userInputs.push(userGuess.toUpperCase());
 		decreaseGuessesLeft();
 		document.getElementById("alreadyGuessed").innerHTML = userInputs;
-		gameOverCheck();
 	} else {
 		console.log("duplicate");
 	}
@@ -152,6 +151,7 @@ function wordCompleteCheck() {
 			document.getElementById("congrats").innerHTML = "Congrats!!!"
 		} else {
 			wordComplete = false;
+			gameOverCheck();
 		}
 }
 function decreaseGuessesLeft() {
@@ -165,10 +165,16 @@ function resetGuessesLeft() {
 }
 function gameOverCheck() {
 	if (guessesLeft == 0) {
+		completeBlankSpaces();
+		displayBlankLines("guessWord");
 		document.getElementById("congrats").innerHTML = "game over man";
 	} else {
 		document.getElementById("congrats").innerHTML = guessesLeft;
 	}
 }
-
+function completeBlankSpaces() {
+	for (var i = 0; i < wordChosen.length; i++) {
+		spliceIntoBlankArray(i,wordChosen.charAt(i));
+	}
+}
 
