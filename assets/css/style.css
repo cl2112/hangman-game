@@ -31,6 +31,7 @@ body {
 	width: 68.9%;
 	background-image: url(../images/38.gif);
 	background-size: 200% 100%;
+	background-position: 90% 0;
 }
 #player1 {
 	height: 43%;
