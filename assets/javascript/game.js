@@ -85,9 +85,11 @@ function chooseWord() {
 		allWordsChosen.push(wordChosen);
 		console.log(tempWord);
 		console.log(wordChosen);
-	} else {
+	} else if (allWordsChosen.length < 30) {
 		console.log("word repeated");
 		chooseWord();
+	} else {
+		console.log("all words played");
 	}
 }
 function blankGenerator() {
