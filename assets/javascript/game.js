@@ -66,7 +66,7 @@ function checkUserInput(x, y) {
 }
 */
 document.onkeyup = function(event) {
-	if (possibleUserInputs.indexOf(event.key) != -1){
+	if (possibleUserInputs.indexOf(event.key) != -1 && guessesLeft > 0) {
 		userGuess = event.key;
 		console.log(userGuess);
 		compareUserInput();
