@@ -10,4 +10,15 @@ ideas for the game:
 
 	have an image for you and your opponent, character sprites from the game - and when you guess wrong your chara plays the hit animation and when you guess right the opponent gets hit
 
-	
+
+_*_*_*_*_*_*_
+
+	You can make a function for searching arrays and have it output to true if its there and false if its not.
+
+	function isItInArray(array,checking,) {
+		if (array.indexOf(checking) == -1) {
+			return true;
+		} else {
+			return false;
+		}
+	};

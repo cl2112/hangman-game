@@ -7,26 +7,38 @@
 </head>
 <body>
 	<div class="container-fluid">
+
+	
 		<div class="row marquee">
-			<div class="col-lg-12 text-center">
-				<img src="assets/images/street-fighter-2-logo.jpg" style="height: 200px; width: 600px;">
+			<div class="col-lg-1" style="border: 5px solid grey; background-color: black;padding: 1px; height: 300px;"></div>
+			<div class="col-lg-10 text-center" style="position: relative; padding: 0">
+				<img src="assets/images/street-fighter-ii-marquee.jpg" style="height: 300px; width: 100%; border: 1px solid black;">
 			</div>
+			<div class="col-lg-1" style="border: 5px solid grey; background-color: black; padding: 1px; height: 300px;"></div>
 		</div>
+
+
 		<div class="row cabinetTop">
-			<div class="col-12-lg text-center">
+			<div class="col-lg-12 text-center">
 				<h1>Guess this word:</h1>
 				<h1 id="guessWord"></h1>
 			</div>
 		</div>
+
+
 		<div class="row cabinetCenter">
-			<div class="col-12-lg text-center">
+			<div class="col-lg-12 text-center">
 				<h1>Already Guessed: </h1>
 				<h1 id="alreadyGuessed"></h1>
 			</div>
 		</div>
-		<div class="cabinetBottom">
+
+
+		<div class="row cabinetBottom">
 			
 		</div>
+
+
 		<div class="row controls">
 			<div class="col-lg-12 text-center">
 				<button onclick="resetBlankArray(), resetUserInputsArray(), chooseWord(), blankGenerator(),
