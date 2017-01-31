@@ -1,0 +1,34 @@
+body {	
+	font-family: 'Press Start 2P', cursive;
+}
+.wrapper {
+	border: 7px solid black;
+}
+.marquee {
+	border-bottom: 7px solid black;
+}
+.marqueeCenter {
+	padding: 0;
+}
+#marqueeImg {
+	height: 300px;
+	width: 100%;
+}
+.screenContainer {
+	padding: 0; 
+	background-color: black;
+}
+#screenBezel {
+	width: 100%; 
+	height: 100%;
+}
+.screenDisplay {
+	position: absolute;
+	top: 23.1%;
+	left: 15.7%;
+	background-color: black;
+	height: 53.5%;
+	width: 68.9%;
+	background-image: url(../images/38.gif);
+	background-size: 200% 100%;
+}
