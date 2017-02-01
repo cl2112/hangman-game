@@ -24,13 +24,18 @@
 				<div class="screenDisplay">
 					<img src="assets/images/ryu-sf2-stance.gif" id="player1">
 					<img src="assets/images/sf-blankaold.gif" id="player2">
-					<div class="goldText"></div>
-					<div class="blueText"></div>
-						<h3 style="position: absolute;top:10%;left:10%;color: #e7951a; z-index:8;">Guess this word:</h3>
-						<h3 style="position: absolute;top:10.4%;left:10.5%;color: #22368E">Guess this word:</h3>
-						<h3 id="guessWord"></h3>
+					<div class="goldText text-center">
+						<h3>Guess this word:</h3>
+						<h3 id="guessWordGold">||||||||</h3>
 						<h3>Already Guessed: </h3>
-						<h3 id="alreadyGuessed"></h3>
+						<h3 id="alreadyGuessedGold"></h3>
+					</div>
+					<div class="blueText text-center">
+						<h3>Guess this word:</h3>
+						<h3 id="guessWordBlue">||||||||</h3>
+						<h3>Already Guessed: </h3>
+						<h3 id="alreadyGuessedBlue"></h3>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -44,7 +49,7 @@
 		<div class="row controls">
 			<div class="col-lg-12 text-center">
 				<button onclick="resetBlankArray(), resetUserInputsArray(), chooseWord(), blankGenerator(),
-				checkForSpaces(), displayBlankLines('guessWord'), resetGuessesLeft()">Please Insert Coin</button>
+				checkForSpaces(), displayBlankLines('guessWordGold'), displayBlankLines('guessWordBlue'), resetGuessesLeft()">Please Insert Coin</button>
 				<h1>Guesses Left:</h1>
 				<h1 id="congrats"></h1>
 			</div>

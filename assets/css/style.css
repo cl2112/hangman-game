@@ -53,3 +53,18 @@ body {
 	filter: FlipH;
 	-ms-filter: "FlipH";"
 }
+.goldText {
+	position: absolute;
+	width: 50%;
+	top:21%;
+	left:24%;
+	color: #e7951a;
+	z-index:8;
+}
+.blueText {
+	position: absolute;
+	top:21.4%;
+	width: 50%;
+	left:24.5%;
+	color: #22368E;
+}

@@ -112,7 +112,8 @@ function compareUserInput() {
 		var letterToBeCompared = wordChosen.charAt(i);
 		if (userGuess.toUpperCase() == letterToBeCompared) {
 			spliceIntoBlankArray(i, letterToBeCompared);
-			displayBlankLines("guessWord");
+			displayBlankLines("guessWordGold");
+			displayBlankLines("guessWordBlue");
 		} 
 	}
 }
@@ -120,7 +121,8 @@ function displayAlreadyGuessed() {
 	if (userInputs.indexOf(userGuess.toUpperCase()) === -1){
 		userInputs.push(userGuess.toUpperCase());
 		decreaseGuessesLeft();
-		document.getElementById("alreadyGuessed").innerHTML = userInputs;
+		document.getElementById("alreadyGuessedGold").innerHTML = userInputs;
+		document.getElementById("alreadyGuessedBlue").innerHTML = userInputs;
 	} else {
 		console.log("duplicate");
 	}
@@ -128,7 +130,8 @@ function displayAlreadyGuessed() {
 function resetUserInputsArray() {
 	if (userInputs.length != 0) {
 		userInputs = [];
-		document.getElementById("alreadyGuessed").innerHTML = userInputs;
+		document.getElementById("alreadyGuessedGold").innerHTML = userInputs;
+		document.getElementById("alreadyGuessedBlue").innerHTML = userInputs;
 	}
 }
 function checkForSpaces() {
@@ -166,7 +169,8 @@ function resetGuessesLeft() {
 function gameOverCheck() {
 	if (guessesLeft == 0) {
 		completeBlankSpaces();
-		displayBlankLines("guessWord");
+		displayBlankLines("guessWordGold");
+		displayBlankLines("guessWordBlue");
 		document.getElementById("congrats").innerHTML = "game over man";
 	} else {
 		document.getElementById("congrats").innerHTML = guessesLeft;
