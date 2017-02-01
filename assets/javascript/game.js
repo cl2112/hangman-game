@@ -1,19 +1,114 @@
-var userGuess
 var charaChoices = ["AKUMA","RYU","CHUN LI","CAMMY","M. BISON","KEN","VEGA","SAGAT","GUILE","BALROG","ZANGIEF","BLANKA","DHALSIM",
 					"FEI LONG","E. HONDA","T. HAWK","DEE JAY"]
 var moveChoices = ["SHORYUKEN","HADOUKEN","SONIC BOOM","FLASH KICK","KIKOHKEN","HUNDRED HAND SLAP","SUMO HEADBUTT","RAGING DEMON",
 					"SPINNING PILE DRIVER","TIGER SHOT","TIGER UPPERCUT","RUSH PUNCH","YOGA FLAME","CANNON SPIKE"]
 var totalChoices = [charaChoices, moveChoices]
+var allWordsChosen = []
+var wordChosen
+
+var blankArray = []
+var guessLine = "_"
+
+
+
+
 var userInputs = []
 var possibleUserInputs = ["q","w","e","r","t","y","u","i","o","p","a","s","d","f","g","h","j","k","l","z","x","c","v","b","n","m"]
-var wordChosen
-var guessLine = "_"
-var linesTotal 
-var correctLetter
-var blankArray = []
+
+
+ 
+
+
 var wordCompleted
 var guessesLeft
-var allWordsChosen = []
+
+var userGuess
+
+
+var linesTotal
+
+var correctLetter
+
+
+//pick a word from the array, check if it is a repeat, if yes - get a new word, if no - push to the array then
+//generate blank lines and display
+function chooseWord() {
+	var tempArray = totalChoices[Math.floor(Math.random() * totalChoices.length)];
+	var tempWord = tempArray[Math.floor(Math.random() * tempArray.length)];
+	if (allWordsChosen.indexOf(tempWord) == -1) {
+		wordChosen = tempWord;
+		allWordsChosen.push(wordChosen);
+		blankArray = [];
+		fillBlankArray(wordChosen);
+		checkForSpaces();
+		displayBlankArray();
+		console.log(wordChosen);
+		console.log(blankArray);
+
+	} else if (allWordsChosen.length < 30) {
+		console.log("Duplicate Word :" + tempWord);
+		chooseWord();
+	} else {
+		console.log("No More Words Left.")
+	}
+}
+function fillBlankArray(word) {
+	for (var i = 0; i < word.length; i++) {
+		blankArray.push(guessLine);
+	}
+}
+function checkForSpaces() {
+	for (var i = 0; i < wordChosen.length; i++) {
+		if (wordChosen.charAt(i) == " ") {
+			blankArray.splice(i, 1, wordChosen.charAt(i));
+		}
+		if (wordChosen.charAt(i) == ".") {
+			blankArray.splice(i, 1, wordChosen.charAt(i));
+		}
+	}
+}
+function displayBlankArray() {
+	document.getElementById("guessWordGold").innerHTML = blankArray.join("");
+	document.getElementById("guessWordBlue").innerHTML = blankArray.join("");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
 document.onkeyup = function(event) {
@@ -185,6 +280,3 @@ function completeBlankSpaces() {
 }
 */
 
-function chooseWord() {
-	
-}
