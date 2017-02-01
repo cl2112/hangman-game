@@ -65,6 +65,8 @@ function checkUserInput(x, y) {
 	}
 }
 */
+
+/*
 document.onkeyup = function(event) {
 	if (possibleUserInputs.indexOf(event.key) != -1 && guessesLeft > 0) {
 		userGuess = event.key;
@@ -181,4 +183,8 @@ function completeBlankSpaces() {
 		spliceIntoBlankArray(i,wordChosen.charAt(i));
 	}
 }
+*/
 
+function chooseWord() {
+	
+}
