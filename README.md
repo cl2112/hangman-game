@@ -22,3 +22,9 @@ _*_*_*_*_*_*_
 			return false;
 		}
 	};
+
+	questions to ask:
+
+	how to make the font-size be responsive!!!
+
+	

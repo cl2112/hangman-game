@@ -13,7 +13,8 @@ var guessLine = "_"
 
 
 var userInputs = []
-var possibleUserInputs = ["q","w","e","r","t","y","u","i","o","p","a","s","d","f","g","h","j","k","l","z","x","c","v","b","n","m"]
+var possibleUserInputs = ["q","w","e","r","t","y","u","i","o","p","a","s","d","f","g",
+							"h","j","k","l","z","x","c","v","b","n","m"]
 
 
  
@@ -72,6 +73,29 @@ function displayBlankArray() {
 	document.getElementById("guessWordBlue").innerHTML = blankArray.join("");
 }
 
+
+
+document.onkeyup = function(event) {
+	if (possibleUserInputs.indexOf(event.key) != -1 && guessesLeft > 0) {
+		var userInput = event.key;
+		userGuess = userInput.toUpperCase();
+		console.log("User Input: " + userInput + "---" + "User Guess: " + userGuess);
+		compareUserGuess();
+		displayAlreadyGuessed();
+		wordCompleteCheck();
+	} else {
+		console.log("Key Not Supported Or No More Guesses Left.")
+	}
+}
+function compareUserGuess() {
+
+}
+function displayAlreadyGuessed() {
+
+}
+function wordCompleteCheck() {
+
+}
 
 
 
