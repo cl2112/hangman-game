@@ -111,12 +111,20 @@ function compareUserGuess() {
 	
 }
 function displayAlreadyGuessed() {
-	document.getElementById("alreadyGuessedGold").innerHTML = (userInputArray.join(",")).toUpperCase();
-	document.getElementById("alreadyGuessedBlue").innerHTML = (userInputArray.join(",")).toUpperCase();
+	document.getElementById("alreadyGuessedGold").innerHTML = (userInputArray.join(" ")).toUpperCase();
+	document.getElementById("alreadyGuessedBlue").innerHTML = (userInputArray.join(" ")).toUpperCase();
 }
-function wordCompleteCheck() {
+function gameStateCheck() {
+	if (guessesLeft == 0) {
+		gameOver();
+	} else {
+
+	}
+}
+function gameOver() {
 
 }
+
 
 
 
