@@ -53,10 +53,12 @@ function nextRound() {
 		console.log("YOU ARE THE BEST!")
 	} else {
 		blankArray = [];
-		userInputArray = [];
+		userInputArray = ["|","|","|","|","|","|","|","|",];
+		displayAlreadyGuessed();
 		guessesLeft = 10;
 		resetP1Health();
-		displayAlreadyGuessed();
+		p2Health = 0
+		setP2Health();
 		chooseWord();
 	}
 }
@@ -72,6 +74,8 @@ function chooseWord() {
 		fillBlankArray(wordChosen);
 		checkForSpaces();
 		displayBlankArray();
+		resetP2Health();
+		setP2Health();
 		console.log(wordChosen);
 		console.log(blankArray);
 
@@ -135,6 +139,7 @@ function compareUserGuess() {
 		for (var i = 0; i < wordChosen.length; i++) {
 			if (wordChosen.charAt(i) == userGuess) {
 				blankArray.splice(i, 1, wordChosen.charAt(i));
+				decreaseP2Health();
 			}
 		}
 	}
@@ -190,7 +195,9 @@ function decreaseP2Health() {
 	}
 }
 
-
+function displayWins(){
+	document.getElementById("winsGold").innerHTML = "0000" + wins;
+}
 
 
 
