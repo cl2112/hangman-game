@@ -32,6 +32,8 @@ var correctLetter
 
 var wins
 
+var p2Health = 0
+
 
 
 
@@ -53,6 +55,7 @@ function nextRound() {
 		blankArray = [];
 		userInputArray = [];
 		guessesLeft = 10;
+		resetP1Health();
 		displayAlreadyGuessed();
 		chooseWord();
 	}
@@ -126,6 +129,7 @@ function triggerOnKeyUp() {
 function compareUserGuess() {
 	if (wordChosen.indexOf(userGuess) == -1) {
 		guessesLeft -= 1;
+		decreaseP1Health();
 		console.log(guessesLeft);
 	} else {
 		for (var i = 0; i < wordChosen.length; i++) {
@@ -154,10 +158,37 @@ function gameOver() {
 }
 function decreaseP1Health() {
 	var container = document.getElementById("p1HealthContainer");
-	console.log(container);
-	container.style.backgroundColor="blue";
+	var leftValue = parseInt(container.style.left, 10);
+	container.style.left = (leftValue + 4) + "%";
+	var widthValue = parseInt(container.style.width, 10);
+	container.style.width = (widthValue - 4) + "%";
+}
+function resetP1Health() {
+	document.getElementById("p1HealthContainer").style.left = "0%";
+	document.getElementById("p1HealthContainer").style.width = "40%";
 }
 
+function resetP2Health() {
+	document.getElementById("p2HealthContainer").style.width = "40%";
+}
+
+function setP2Health() {
+	for (var i = 0; i < blankArray.length; i++) {
+		if(blankArray[i] == guessLine){
+			p2Health++;
+		}
+	}
+}
+function decreaseP2Health() {
+	var increment = 40 / p2Health;
+	var container = document.getElementById("p2HealthContainer");
+	var widthValue = parseInt(container.style.width, 10);
+	if (widthValue < 1){
+		container.style.width = 0 + "%";
+	} else {
+		container.style.width = (widthValue - increment) + "%";
+	}
+}
 
 
 
