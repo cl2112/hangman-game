@@ -23,14 +23,40 @@ var userGuess
 
 var wordCompleted
 
-var guessesLeft = 10
+var guessesLeft 
 
 
 var linesTotal
 
 var correctLetter
 
+var wins
 
+
+
+
+
+
+function startGame() {
+	allWordsChosen = [];
+	blankArray = [];
+	userInputArray = [];
+	guessesLeft = 10;
+	wins = 0;
+	chooseWord();
+
+}
+function nextRound() {
+	if (wins == 5) {
+		console.log("YOU ARE THE BEST!")
+	} else {
+		blankArray = [];
+		userInputArray = [];
+		guessesLeft = 10;
+		displayAlreadyGuessed();
+		chooseWord();
+	}
+}
 //pick a word from the array, check if it is a repeat, if yes - get a new word, if no - push to the array then
 //generate blank lines and display
 function chooseWord() {
@@ -70,7 +96,7 @@ function checkForSpaces() {
 }
 function displayBlankArray() {
 	document.getElementById("guessWordGold").innerHTML = blankArray.join("");
-	document.getElementById("guessWordBlue").innerHTML = blankArray.join("");
+	//document.getElementById("guessWordBlue").innerHTML = blankArray.join("");
 }
 
 
@@ -92,7 +118,7 @@ function triggerOnKeyUp() {
 	compareUserGuess();
 	displayBlankArray();
 	displayAlreadyGuessed();
-
+	gameStateCheck();
 }
 
 
@@ -112,17 +138,24 @@ function compareUserGuess() {
 }
 function displayAlreadyGuessed() {
 	document.getElementById("alreadyGuessedGold").innerHTML = (userInputArray.join(" ")).toUpperCase();
-	document.getElementById("alreadyGuessedBlue").innerHTML = (userInputArray.join(" ")).toUpperCase();
+	//document.getElementById("alreadyGuessedBlue").innerHTML = (userInputArray.join(" ")).toUpperCase();
 }
 function gameStateCheck() {
 	if (guessesLeft == 0) {
 		gameOver();
-	} else {
-
+	} else if (blankArray.indexOf(guessLine) == -1) {
+		console.log("Word Completed!");
+		wins++;
+		nextRound();
 	}
 }
 function gameOver() {
-
+	console.log("GameOver")
+}
+function decreaseP1Health() {
+	var container = document.getElementById("p1HealthContainer");
+	console.log(container);
+	container.style.backgroundColor="blue";
 }
 
 

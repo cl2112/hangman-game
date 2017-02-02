@@ -32,24 +32,13 @@
 						<h2 class="wins2">Wins:</h2>
 						<h2 id="lossesGold" class="lossesCount">00000</h2>
 					</div>
-					<!--<div class="blueStats">
-						<h2 class="P1">1P</h2>
-						<h2 class="wins1">Wins:</h2>
-						<h2 id="winsBlue" class="winsCount">00000</h2>
-						<h2 class="P2">2P</h2>
-						<h2 class="wins2">Wins:</h2>
-						<h2 id="lossesBlue" class="lossesCount">00000</h2>
-					</div>-->
+					
 					<div class="healthBar">
 						<div class="player1Health">
-							<div class="p1HealthContainer"></div>
+							<div id="p1HealthContainer"></div>
 						</div>
 						<img src="assets/images/sf4KO.png" id="koImg">
-						<!--<div class="ko">
-							<h1 class="white">KO</h1>
-							<h1 class="blue1">KO</h1>
-							<h1 class="blue2">KO</h1>
-						</div>-->
+						
 						<div class="player2Health">
 							
 						</div>
@@ -64,12 +53,7 @@
 						<h3>Already Guessed: </h3>
 						<h3 id="alreadyGuessedGold" class="increaseLineHeight">||||||||</h3>
 					</div>
-					<!--<div class="blueText text-center">
-						<h3>Guess this word:</h3>
-						<h3 id="guessWordBlue">||||||||</h3>
-						<h3>Already Guessed: </h3>
-						<h3 id="alreadyGuessedBlue" class="increaseLineHeight">||||||||</h3>
-					</div>-->
+					
 				</div>
 			</div>
 		</div>
@@ -83,8 +67,7 @@
 		<div class="row controls">
 			<div class="col-lg-12 text-center controlBase">
 				<img id="controlImage" src="assets/images/sf-controls.jpg">
-				<button onclick="resetBlankArray(), resetUserInputsArray(), chooseWord(), blankGenerator(),
-				checkForSpaces(), displayBlankLines('guessWordGold'), displayBlankLines('guessWordBlue'), resetGuessesLeft()">Please Insert Coin</button>
+				<button onclick="startGame()">Please Insert Coin</button>
 				<h1>Guesses Left:</h1>
 				<h1 id="congrats"></h1>
 			</div>
