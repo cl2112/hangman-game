@@ -42,7 +42,8 @@ var p2Health = 0
 function startGame() {
 	allWordsChosen = [];
 	blankArray = [];
-	userInputArray = [];
+	userInputArray = ["|","|","|","|","|","|","|","|"];
+	displayAlreadyGuessed();
 	guessesLeft = 10;
 	wins = 0;
 	chooseWord();
