@@ -32,3 +32,10 @@ _*_*_*_*_*_*_
 	Callback functions
 
 	playing sounds
+
+
+
+
+	_*_*_*_*_*_*_*_*
+
+	use text-shadow for the letters.!!!!!!!!!!!
