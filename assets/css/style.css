@@ -1,5 +1,4 @@
 html {
-	font-size: 1em;
 }
 h1 {
 	font-size: 2em;
@@ -79,6 +78,7 @@ body {
 	color: #f17e3b;
 	z-index:8;
 	text-align: left;
+	text-shadow: 3px 3px #22368E;
 }
 .goldStats .P1 {
 	position: absolute;
@@ -185,15 +185,24 @@ body {
 	color: darkblue;
 	font-size: 150%;
 }
+.p1HealthContainer {
+	position: absolute;
+	top: 2%;
+	left: 0%;
+	height: 98%;
+	width: 38%;
+	background-color: yellow;
+}
 .goldText {
 	position: absolute;
 	width: 50%;
-	top:18%;
+	top:20%;
 	left:24%;
 	color: #f17e3b;
 	z-index:8;
 	background-color: rgba(0,0,0,.3);
-	border: 1px solid rgba(255,255,255,.4)
+	border: 1px solid rgba(255,255,255,.4);
+	text-shadow: 3px 3px #22368E;
 }
 .blueText {
 	position: absolute;
@@ -216,4 +225,12 @@ body {
 }
 .controlBase {
 	padding: 0;
+	background-image: "../images/sf-controls.jpg"
+}
+#koImg {
+	position: absolute;
+	top: -186%;
+	left: 26%;
+	width: 45%;
+	height: 500%;
 }
