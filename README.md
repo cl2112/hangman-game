@@ -27,4 +27,8 @@ _*_*_*_*_*_*_
 
 	how to make the font-size be responsive!!!
 
-	
+	working with gifs, making them stop , timing with js
+
+	Callback functions
+
+	playing sounds

@@ -12,18 +12,18 @@ var guessLine = "_"
 
 
 
-var userInputs = []
+var userInputArray = []
 var possibleUserInputs = ["q","w","e","r","t","y","u","i","o","p","a","s","d","f","g",
 							"h","j","k","l","z","x","c","v","b","n","m"]
 
 
  
+var userGuess
 
 
 var wordCompleted
-var guessesLeft
 
-var userGuess
+var guessesLeft = 10
 
 
 var linesTotal
@@ -74,24 +74,45 @@ function displayBlankArray() {
 }
 
 
-
+//if the key pressed is a letter and there are guesses left and its not a repeat letter, store the key pressed and trigger checks
 document.onkeyup = function(event) {
-	if (possibleUserInputs.indexOf(event.key) != -1 && guessesLeft > 0) {
+	if (possibleUserInputs.indexOf(event.key) != -1 && guessesLeft > 0 && userInputArray.indexOf(event.key) == -1) {
 		var userInput = event.key;
+		userInputArray.push(userInput);
 		userGuess = userInput.toUpperCase();
 		console.log("User Input: " + userInput + "---" + "User Guess: " + userGuess);
-		compareUserGuess();
-		displayAlreadyGuessed();
-		wordCompleteCheck();
+		triggerOnKeyUp();
 	} else {
-		console.log("Key Not Supported Or No More Guesses Left.")
+		console.log("Key Not Supported Or No More Guesses Left Or Duplicate Key.")
 	}
 }
-function compareUserGuess() {
+
+
+function triggerOnKeyUp() {
+	compareUserGuess();
+	displayBlankArray();
+	displayAlreadyGuessed();
 
 }
-function displayAlreadyGuessed() {
 
+
+//checks if the userGuess is in the wordChosen, if yes write it to blankArray, if no - lose a life.
+function compareUserGuess() {
+	if (wordChosen.indexOf(userGuess) == -1) {
+		guessesLeft -= 1;
+		console.log(guessesLeft);
+	} else {
+		for (var i = 0; i < wordChosen.length; i++) {
+			if (wordChosen.charAt(i) == userGuess) {
+				blankArray.splice(i, 1, wordChosen.charAt(i));
+			}
+		}
+	}
+	
+}
+function displayAlreadyGuessed() {
+	document.getElementById("alreadyGuessedGold").innerHTML = (userInputArray.join(",")).toUpperCase();
+	document.getElementById("alreadyGuessedBlue").innerHTML = (userInputArray.join(",")).toUpperCase();
 }
 function wordCompleteCheck() {
 
@@ -184,7 +205,7 @@ function checkUserInput(x, y) {
 	}
 }
 */
-
+//------------------------------------------------------------------------------------------
 /*
 document.onkeyup = function(event) {
 	if (possibleUserInputs.indexOf(event.key) != -1 && guessesLeft > 0) {
