@@ -51,14 +51,19 @@ function startGame() {
 function nextRound() {
 	if (wins == 5) {
 		console.log("YOU ARE THE BEST!")
+		displayWins();
+		userInputArray = ["C","O","N","G","R","A","T","S"]
+		displayAlreadyGuessed();
 	} else {
 		blankArray = [];
 		userInputArray = ["|","|","|","|","|","|","|","|",];
 		displayAlreadyGuessed();
 		guessesLeft = 10;
+		userInputArray = [];
 		resetP1Health();
 		p2Health = 0
 		setP2Health();
+		displayWins();
 		chooseWord();
 	}
 }
