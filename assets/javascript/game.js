@@ -164,7 +164,9 @@ function gameStateCheck() {
 	}
 }
 function gameOver() {
-	console.log("GameOver")
+	console.log("GameOver");
+	userInputArray = ["G","A","M","E","O","V","E","R","<br>","I","N","S","E","R","T"," ","C","O","I","N"];
+	displayAlreadyGuessed();
 }
 function decreaseP1Health() {
 	var container = document.getElementById("p1HealthContainer");
