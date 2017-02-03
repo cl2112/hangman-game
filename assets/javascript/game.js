@@ -46,6 +46,9 @@ function startGame() {
 	displayAlreadyGuessed();
 	guessesLeft = 10;
 	wins = 0;
+	resetP1Health();
+	resetP2Health();
+	document.getElementById("stage").play();
 	chooseWord();
 
 }
@@ -140,6 +143,7 @@ function compareUserGuess() {
 	if (wordChosen.indexOf(userGuess) == -1) {
 		guessesLeft -= 1;
 		decreaseP1Health();
+		document.getElementById("hitSFX2").play();
 		console.log(guessesLeft);
 	} else {
 		for (var i = 0; i < wordChosen.length; i++) {
@@ -198,8 +202,10 @@ function decreaseP2Health() {
 	var widthValue = parseInt(container.style.width, 10);
 	if (widthValue < 1){
 		container.style.width = 0 + "%";
+		document.getElementById("hitSFX1").play();
 	} else {
 		container.style.width = (widthValue - increment) + "%";
+		document.getElementById("hitSFX2").play();
 	}
 }
 
