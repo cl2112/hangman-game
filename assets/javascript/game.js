@@ -150,6 +150,7 @@ function compareUserGuess() {
 			if (wordChosen.charAt(i) == userGuess) {
 				blankArray.splice(i, 1, wordChosen.charAt(i));
 				decreaseP2Health();
+				hitP1Ani();
 			}
 		}
 	}
@@ -213,7 +214,14 @@ function displayWins(){
 	document.getElementById("winsGold").innerHTML = "0000" + wins;
 }
 
-
-
+function resetP1Ani(){
+	document.getElementById("player1").src = "assets/images/ryu-sf2-stance.gif";
+	document.getElementById("player1").style.width = 18 + "%";
+}
+function hitP1Ani(){
+	document.getElementById("player1").src = "assets/images/ryu-sf2-a5.gif";
+	document.getElementById("player1").style.width = 38 + "%";
+	setTimeout(resetP1Ani, 600);
+}
 
 
