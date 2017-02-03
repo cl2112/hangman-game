@@ -47,6 +47,7 @@ function startGame() {
 	userInputArray = [];
 	guessesLeft = 10;
 	wins = 0;
+	displayWins();
 	resetP1Health();
 	resetP1Ani();
 	resetP2Health();
@@ -61,7 +62,7 @@ function nextRound() {
 		userInputArray = ["C","O","N","G","R","A","T","S"];
 		displayAlreadyGuessed();
 		decreaseP2Health();
-		setTimeout(winP1Ani,2000);
+		setTimeout(winP1Ani,1000);
 	} else {
 		blankArray = [];
 		userInputArray = ["|","|","|","|","|","|","|","|",];
@@ -178,6 +179,7 @@ function gameOver() {
 	console.log("GameOver");
 	userInputArray = ["G","A","M","E","O","V","E","R","<br>","I","N","S","E","R","T"," ","C","O","I","N"];
 	displayAlreadyGuessed();
+	setTimeout(winP2Ani,1000);
 }
 function decreaseP1Health() {
 	var container = document.getElementById("p1HealthContainer");
@@ -254,5 +256,9 @@ function hitP2Ani() {
 	setTimeout(resetP2Ani, 700);
 }
 function winP2Ani() {
-
+	document.getElementById("player2").src = "assets/images/blanka-sf2-win.gif";
+	document.getElementById("player2").style.width = 37 + "%";
+	document.getElementById("player2").style.height = 58 + "%";
+	document.getElementById("player2").style.top = 35 + "%";
+	document.getElementById("player2").style.left = 54 + "%";
 }
