@@ -48,6 +48,7 @@ function startGame() {
 	guessesLeft = 10;
 	wins = 0;
 	resetP1Health();
+	resetP1Ani();
 	resetP2Health();
 	document.getElementById("stage").play();
 	chooseWord();
@@ -55,12 +56,12 @@ function startGame() {
 }
 function nextRound() {
 	if (wins == 5) {
-		console.log("YOU ARE THE BEST!")
+		console.log("YOU ARE THE BEST!");
 		displayWins();
-		userInputArray = ["C","O","N","G","R","A","T","S"]
+		userInputArray = ["C","O","N","G","R","A","T","S"];
 		displayAlreadyGuessed();
 		decreaseP2Health();
-		winP1Ani();
+		setTimeout(winP1Ani,2000);
 	} else {
 		blankArray = [];
 		userInputArray = ["|","|","|","|","|","|","|","|",];
@@ -147,6 +148,7 @@ function compareUserGuess() {
 		guessesLeft -= 1;
 		decreaseP1Health();
 		document.getElementById("hitSFX2").play();
+		hitP2Ani();
 		console.log(guessesLeft);
 	} else {
 		for (var i = 0; i < wordChosen.length; i++) {
@@ -230,10 +232,27 @@ function hitP1Ani(){
 	setTimeout(resetP1Ani, 600);
 }
 function winP1Ani() {
+	document.getElementById("player1").style.width = 22 + "%";
+	document.getElementById("player1").style.height = 55 + "%";
+	document.getElementById("player1").style.top = 38 + "%";
+	document.getElementById("player1").style.left = 13 + "%";
 	document.getElementById("player1").src = "assets/images/ryu-winpose-sf2.gif";
-	document.getElementById("player1").style.width = 24 + "%";
-	document.getElementById("player1").style.height = 61 + "%";
-	document.getElementById("player1").style.top = 32 + "%";
-	document.getElementById("player1").style.left = 12 + "%";
 }
+function resetP2Ani() {
+	document.getElementById("player2").src = "assets/images/sf-blankaold.gif";
+	document.getElementById("player2").style.width = "";
+	document.getElementById("player2").style.height = "";
+	document.getElementById("player2").style.top = "";
+	document.getElementById("player2").style.left = "";
+}
+function hitP2Ani() {
+	document.getElementById("player2").src = "assets/images/blanka-sf2-flipkick.gif";
+	document.getElementById("player2").style.width = 51 + "%";
+	document.getElementById("player2").style.height = 63 + "%";
+	document.getElementById("player2").style.top = 32 + "%";
+	document.getElementById("player2").style.left = 47 + "%";
+	setTimeout(resetP2Ani, 700);
+}
+function winP2Ani() {
 
+}
