@@ -44,6 +44,7 @@ function startGame() {
 	blankArray = [];
 	userInputArray = ["|","|","|","|","|","|","|","|"];
 	displayAlreadyGuessed();
+	userInputArray = [];
 	guessesLeft = 10;
 	wins = 0;
 	resetP1Health();
@@ -58,6 +59,8 @@ function nextRound() {
 		displayWins();
 		userInputArray = ["C","O","N","G","R","A","T","S"]
 		displayAlreadyGuessed();
+		decreaseP2Health();
+		winP1Ani();
 	} else {
 		blankArray = [];
 		userInputArray = ["|","|","|","|","|","|","|","|",];
@@ -216,12 +219,21 @@ function displayWins(){
 
 function resetP1Ani(){
 	document.getElementById("player1").src = "assets/images/ryu-sf2-stance.gif";
-	document.getElementById("player1").style.width = 18 + "%";
+	document.getElementById("player1").style.width = "";
+	document.getElementById("player1").style.height = "";
+	document.getElementById("player1").style.top = "";
+	document.getElementById("player1").style.left = "";
 }
 function hitP1Ani(){
 	document.getElementById("player1").src = "assets/images/ryu-sf2-a5.gif";
 	document.getElementById("player1").style.width = 38 + "%";
 	setTimeout(resetP1Ani, 600);
 }
-
+function winP1Ani() {
+	document.getElementById("player1").src = "assets/images/ryu-winpose-sf2.gif";
+	document.getElementById("player1").style.width = 24 + "%";
+	document.getElementById("player1").style.height = 61 + "%";
+	document.getElementById("player1").style.top = 32 + "%";
+	document.getElementById("player1").style.left = 12 + "%";
+}
 
