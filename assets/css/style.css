@@ -231,7 +231,7 @@ h5 {
 }
 .controlBase {
 	padding: 0;
-	background-image: "../images/sf-controls.jpg"
+	background-color: black;
 }
 #koImg {
 	position: absolute;
