@@ -240,3 +240,7 @@ h5 {
 	width: 48%;
 	height: 500%;
 }
+#insertCoinBtn {
+	width: 100%;
+	padding: 2% 0;
+}

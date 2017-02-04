@@ -42,7 +42,7 @@ var p2Health = 0
 function startGame() {
 	allWordsChosen = [];
 	blankArray = [];
-	userInputArray = ["|","|","|","|","|","|","|","|"];
+	userInputArray = ["GUESS","A","LETTER"];
 	displayAlreadyGuessed();
 	userInputArray = [];
 	guessesLeft = 10;
@@ -51,6 +51,7 @@ function startGame() {
 	resetP1Health();
 	resetP1Ani();
 	resetP2Health();
+	resetP2Ani();
 	document.getElementById("stage").play();
 	chooseWord();
 
