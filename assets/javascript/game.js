@@ -59,7 +59,7 @@ function nextRound() {
 	if (wins == 5) {
 		console.log("YOU ARE THE BEST!");
 		displayWins();
-		userInputArray = ["C","O","N","G","R","A","T","S"];
+		userInputArray = ["C","O","N","G","R","A","T","S","<br>","I","N","S","E","R","T"," ","C","O","I","N"];
 		displayAlreadyGuessed();
 		decreaseP2Health();
 		setTimeout(winP1Ani,1000);
